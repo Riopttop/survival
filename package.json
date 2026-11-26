@@ -6,14 +6,16 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sprites": "node tools/make-sprites.mjs"
+    "sprites": "node tools/make-sprites.mjs",
+    "build:single": "vite build --mode single --outDir dist-single"
   },
   "dependencies": {
     "phaser": "^3.90.0"
   },
   "devDependencies": {
     "pngjs": "^7.0.0",
-    "vite": "^7.3.8"
+    "vite": "^7.3.8",
+    "vite-plugin-singlefile": "^2.3.4"
   },
   "private": true,
   "type": "module"

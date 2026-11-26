@@ -1,15 +1,19 @@
 import Phaser from 'phaser';
 
-// Sprite files live in public/assets. To swap art, replace the PNG with one of the same layout:
+// Vite turns these into URLs (small PNGs are inlined as data URIs).
+const ART = import.meta.glob('../assets/*.png', { eager: true, import: 'default' });
+const url = (k) => ART[`../assets/${k}.png`];
+
+// Sprite files live in src/assets. To swap art, replace the PNG with one of the same layout:
 // 16x16 frames laid out horizontally for hero/slime/bat/brute.
 export default class BootScene extends Phaser.Scene {
   constructor() { super('Boot'); }
 
   preload() {
     for (const k of ['hero', 'slime', 'bat', 'brute']) {
-      this.load.spritesheet(k, `assets/${k}.png`, { frameWidth: 16, frameHeight: 16 });
+      this.load.spritesheet(k, url(k), { frameWidth: 16, frameHeight: 16 });
     }
-    for (const k of ['gem', 'bolt', 'blade', 'heart', 'ground']) this.load.image(k, `assets/${k}.png`);
+    for (const k of ['gem', 'bolt', 'blade', 'heart', 'ground']) this.load.image(k, url(k));
   }
 
   create() {

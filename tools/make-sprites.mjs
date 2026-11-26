@@ -5,7 +5,7 @@ import { PNG } from 'pngjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const OUT = path.resolve('public/assets');
+const OUT = path.resolve('src/assets');
 fs.mkdirSync(OUT, { recursive: true });
 
 const hex = (h) => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16), 255];
