@@ -10,7 +10,8 @@
     "build:single": "vite build --mode single --outDir dist-single"
   },
   "dependencies": {
-    "phaser": "^3.90.0"
+    "galmuri": "^2.40.3",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "pngjs": "^7.0.0",
